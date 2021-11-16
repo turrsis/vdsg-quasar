@@ -10,8 +10,8 @@
 const ESLintPlugin = require('eslint-webpack-plugin')
 const { configure } = require('quasar/wrappers')
 
-module.exports = configure(function (ctx) {
-  return {
+module.exports = configure(async function (ctx) {
+  return await (await import('vdsg-server-common')).configureSlaveConfig({
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
 
@@ -67,8 +67,8 @@ module.exports = configure(function (ctx) {
       // https://quasar.dev/quasar-cli/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
       chainWebpack (chain) {
-        chain.plugin('eslint-webpack-plugin')
-          .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }])
+        /*chain.plugin('eslint-webpack-plugin')
+          .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }])*/
       }
     },
 
@@ -76,7 +76,7 @@ module.exports = configure(function (ctx) {
     devServer: {
       https: false,
       port: 8087,
-      open: true // opens browser window automatically
+      open: false, // opens browser window automatically
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
@@ -220,5 +220,5 @@ module.exports = configure(function (ctx) {
           .use(ESLintPlugin, [{ extensions: ['js'] }])
       }
     }
-  }
+  })
 })

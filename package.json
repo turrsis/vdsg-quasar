@@ -1,14 +1,16 @@
 {
-  "name": "vdsg-quasar",
-  "version": "0.0.1",
+  "name": "vdsg-tests-quasar",
+  "version": "0.0.0",
   "description": "quasar test project",
   "productName": "vdsg-quasar",
   "author": "Turrsis <turrsis@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "quasar dev",
+    "dev:ssr": "quasar dev -m ssr",
     "lint": "eslint --ext .js,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "postinstall": "call ..\\vdsg-tests-vuecli\\link-tests.bat"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
@@ -42,5 +44,12 @@
     "node": ">= 12.22.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "workspaces": [
+    "../../repo/vdsg-slave",
+    "../../repo/vdsg-common",
+    "../../repo/vdsg-server-common",
+    "../../meta/vdsg-metadata-configs",
+    "../../meta/vdsg-metadata-quasar"
+  ]
 }

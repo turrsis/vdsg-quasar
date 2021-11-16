@@ -2,6 +2,11 @@
 .thumbs.db
 node_modules
 
+# common designer ui tests
+.designer-tests
+
+/src-ssr
+
 # Quasar core related directories
 .quasar
 /dist

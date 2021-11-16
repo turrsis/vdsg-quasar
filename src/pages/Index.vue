@@ -1,10 +1,17 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
+  <q-page class="flex flex-center" v-designer.true>
+    <q-btn
+      color="white"
+      text-color="black"
+      label="Standard"
+      to="/about"
+    />
+    <q-img
       src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+      spinner-color="blue"
+      width="200px"
+      height="200px"
+    />
   </q-page>
 </template>
 
