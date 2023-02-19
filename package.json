@@ -10,7 +10,7 @@
     "dev:ssr": "quasar dev -m ssr",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
-    "postinstall": "call ..\\vdsg-tests-vuecli\\link-tests.bat"
+    "postinstall": "call ..\\..\\slaves-tests\\vdsg-tests-vuecli\\link-tests.bat"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
